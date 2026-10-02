@@ -35,10 +35,14 @@ public class RulesOf6005 {
     public static boolean mayUseCodeInAssignment(boolean writtenByYourself,
             boolean availableToOthers, boolean writtenAsCourseWork,
             boolean citingYourSource, boolean implementationRequired) {
-        
-        // TODO: Fill in this method, then remove the exception
-        
-        throw new RuntimeException("implement me!");
+
+        // Your own (or your teammates') code is always fine. Anything else must
+        // be available to every student, not be another student's course work,
+        // carry a citation, and not be the very thing the assignment asks you
+        // to implement.
+        return writtenByYourself
+                || (availableToOthers && !writtenAsCourseWork
+                        && citingYourSource && !implementationRequired);
     }
     
     /**
